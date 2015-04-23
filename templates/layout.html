@@ -1,0 +1,10 @@
+<!doctype html>
+<title>coloury</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+<div id="app">
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>

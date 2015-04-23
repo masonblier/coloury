@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h1>coloury</h1>
+  <p>Image color analyzer</p>
+  <div id="progress"><div id="progress_bar" style="width:0%;"></div></div>
+  <div id="color_view">
+    <div id="main_color"></div>
+    <table id="color_table"><tbody><tr id="alternative_colors"><td></td></tr></tbody></table>
+  </div>
+  <div id="image_select">
+    <div id="image_file_view">
+      <label>Select file: <input type="file" id="file_select"></label>
+    </div>
+    <div id="image_drop_view" style="display: none;">
+      Drop file here.
+    </div>
+    <div id="image_preview_view" style="display: none;"></div>
+  </div>
+  <script type="text/javascript">
+    App.start();
+  </script>
+{% endblock %}

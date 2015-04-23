@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+
+#app {
+  max-width: 550px;
+  margin: 20px auto;
+}
+
+#app > h1, #app > p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#image_select {
+  border: 1px dashed #333;
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px;
+}
+#image_select label {
+  padding-left: 30px;
+}
+#image_select input {
+  margin-left: 20px;
+}
+#image_select > #image_drop_view,
+#image_select > #image_file_view {
+  padding: 150px 20px;
+}
+#image_select > #image_preview_view > img {
+  max-width: 100%;
+}
+#image_select > * {
+  pointer-events: none;
+}
+#image_select .error {
+  color: darkred;
+}
+
+#progress {
+  margin-top: 30px;
+  border: 1px solid #777;
+}
+#progress_bar {
+  height: 18px;
+  margin: 1px 0;
+  background: #222;
+}
+
+#main_color {
+  height: 24px;
+  padding: 8px 0;
+  font-size: 20px;
+  border-left: 1px solid #777;
+  border-right: 1px solid #777;
+}
+#color_table {
+  height: 20px;
+  border: 1px solid #777;
+  width: 100%;
+}
+#main_color, #color_table td {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 2px black;
+}
+#color_table td {
+  font-size: 10px;
+}
+#main_color .status {
+  color: black;
+  text-shadow: 0 0 2px white;
+}
