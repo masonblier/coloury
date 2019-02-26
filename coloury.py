@@ -24,6 +24,7 @@ app.config.update(dict(
 def show_home():
     return render_template('home.html')
 
+# check if allowed file type
 def allowed_file(filename):
     return '.' in filename and \
        filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
@@ -32,9 +33,11 @@ def allowed_file(filename):
 def handle_upload():
     file = request.files['file']
     if file and allowed_file(file.filename):
+        # upload to secure filename
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename))
         file.save(filepath)
 
+        # process colors
         task = ProcessImageColors.delay(os.path.abspath(filepath))
         return jsonify(taskId=task.task_id)
     else:
@@ -42,6 +45,7 @@ def handle_upload():
 
 @app.route('/result/<task_id>')
 def check_result(task_id):
+    # check result status of async task
     result = ProcessImageColors.AsyncResult(task_id)
     if result:
         value = None
