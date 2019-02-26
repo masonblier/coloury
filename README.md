@@ -1,5 +1,9 @@
 coloury
 ===
+WARNING: INSECURE DEPENDENCIES, DO NOT USE. 
+
+Archived for reference
+
 Simple flask/celery app that finds the dominant color of an image.
 
 Demo: http://mblier.me/coloury/
